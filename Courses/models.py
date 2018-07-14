@@ -18,4 +18,4 @@ class Course(models.Model):
         return self.courseTitle
 
     def __str__(self): #for python3
-        return self.courseTitle
+        return self.courseTitlefrom 

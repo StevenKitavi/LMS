@@ -15,14 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import include,url
 from django.contrib import admin
-from . import views  
+from .views import (
+    listCourse,
+    createCourse,
+    retrieveCourse,
+    updateCourse,
+    deleteCourse,
+)  
 
 
 urlpatterns = [
-    url(r'^$', views.listCourse,name='listCourse'),
-    url(r'^create/$', views.createCourse,name='createCourse'),
-    url(r'^retrieve/$', views.retrieveCourse,name='retrieveCourse'),
-    url(r'^update/$', views.updateCourse,name='updateCourse'),
-    url(r'^delete/$', views.deleteCourse,name='deleteCourse'),
+    url(r'^$', listCourse,name='listCourse'),
+    url(r'^create/$', createCourse,name='createCourse'),
+    url(r'^retrieve/$', retrieveCourse,name='retrieveCourse'),
+    url(r'^update/$', updateCourse,name='updateCourse'),
+    url(r'^delete/$', deleteCourse,name='deleteCourse'),
     
 ]
