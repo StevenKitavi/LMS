@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
+from django.core.urlresolvers import reverse
 
 #create course model
 
@@ -18,4 +19,8 @@ class Course(models.Model):
         return self.courseTitle
 
     def __str__(self): #for python3
-        return self.courseTitlefrom 
+        return self.courseTitle
+
+    def get_absolute_url(self):
+        return reverse("Courses:retrieve", kwargs={"id": self.id})
+       

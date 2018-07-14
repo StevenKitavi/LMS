@@ -11,8 +11,8 @@
 <body>
     <h1>{{ title }} is working </h1>
 {% for obj in Course_List%} 
-
-<h4>Course: {{ obj.courseTitle }}</h4>
+{% url "Courses:retrieve" id=obj.id %}
+<a href= '{{ obj.get_absolute_url }}'>Course: {{ obj.courseTitle }}</a>
 <p>{{ obj.courseDescription }}</p><br/>
 {{ obj.courseCost }}<br>
 {{ obj.coursePrerequisite }}<br/>

@@ -8,9 +8,8 @@ from .models import Course
 def createCourse(request):
     return HttpResponse("<h1>Create</h1>")
 
-def retrieveCourse(request):
-    # instance = Course.objects.get(id=20)
-    instance = get_object_or_404(Course, id="2")
+def retrieveCourse(request,id=None):
+    instance = get_object_or_404(Course, id=id)
     context ={
         "title": "retrieve",
         "instance": instance,
