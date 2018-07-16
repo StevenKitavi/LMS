@@ -8,6 +8,7 @@ class Course(models.Model):
     courseTitle = models.CharField(max_length=120)
     courseDescription = models.TextField()
     courseCost = models.CharField(max_length=120)
+    courseDuration = models.CharField(max_length=120)
     courseCategory= models.CharField(max_length=120)
     courseModeOfDelivery = models.CharField(max_length=120)
     courseSkillLevel = models.CharField(max_length=120)
