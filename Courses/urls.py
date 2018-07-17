@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^$', listCourse,name='listCourse'),
     url(r'^create/$', createCourse,name='create'),
     url(r'^(?P<id>\d+)/$', retrieveCourse,name='retrieve'),
-    url(r'^update/$', updateCourse,name='update'),
+    url(r'^(?P<id>\d+)/edit/$', updateCourse,name='update'),
     url(r'^delete/$', deleteCourse,name='delete'),
     
 ]
