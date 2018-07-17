@@ -25,11 +25,11 @@ from .views import (
 
 
 urlpatterns = [
-    url(r'^$', listCourse,name='listCourse'),
+    url(r'^$', listCourse,name='list'),
     url(r'^create/$', createCourse,name='create'),
     url(r'^(?P<id>\d+)/$', retrieveCourse,name='retrieve'),
     url(r'^(?P<id>\d+)/edit/$', updateCourse,name='update'),
-    url(r'^delete/$', deleteCourse,name='delete'),
+    url(r'^(?P<id>\d+)/delete/$', deleteCourse,name='delete'),
     
 ]
  
