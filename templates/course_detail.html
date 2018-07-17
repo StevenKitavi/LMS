@@ -1,37 +1,32 @@
- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>First</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-        {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class ="{{ message.tags }}"{% endif %}>
-            {% if "html_safe" in message.tags %}
-
-            {{ message|safe }}{% else %}{{ message }}
-            {% endif %} </li>
-             {% endfor %}
-        </ul>
-                {% endif %}
-
-    <h1>{{ title }}</h1>
+{% extends "base.html" %}
 
 
-<h4>Course: {{ instance.courseTitle }}</h4>
-<p>{{ instance.courseDescription }}</p>
+{% block head_title %}
+{{ instance.title }} | {{ block.super }}
+{% endblock head_title %}
+
+<style>
+        {% block style %}
+
+        h1{
+            color: #77777;
+        }
+        {% endblock style %}
+         </style>
+
+
+{% block content %}
+
+
+<h1>{{ title }}</h1>
+
+{{ instance.courseTitle }}<br/>
+{{ instance.courseDescription }}<br/>
 {{ instance.courseCost }}<br>
 {{ instance.coursePrerequisite }}<br/>
 {{ instance.updated }}<br/>
 {{ instance.timestamp }}<br/>
 {{ instance.courseDuration }}<br/>
-{{ instance.id }}<br>
+{{ instance.id }}<br/>
 
-</body>
-</html>
+{% endblock content %}

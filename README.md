@@ -9,3 +9,9 @@ The system integrates a chat bot assistant which an onsite support team to help 
 
 #Add to models
 #courseDuration
+
+#COurse Module
+this basically handles the content of the courses
+
+#ADMIN MOdule
+this manages ser actions and their permissinos.

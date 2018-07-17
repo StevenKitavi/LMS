@@ -27,7 +27,7 @@ def createCourse(request):
 def retrieveCourse(request,id=None):
     instance = get_object_or_404(Course, id=id)
     context ={
-        "title": "retrieve",
+        "title": "Course Detail",
         "instance": instance,
     }
     return render(request, "course_detail.html", context)
@@ -37,10 +37,10 @@ def listCourse(request):
     queryset = Course.objects.all()
     context = { 
         "Course_List": queryset, 
-        "title": "List"
+        "title": "Course List"
     }
   
-    return render(request, "index.html", context)
+    return render(request, "base.html", context)
    
 
 def updateCourse(request,id=None):
@@ -50,9 +50,7 @@ def updateCourse(request,id=None):
         instance = form.save(commit=False)
         instance.save()
         #Message Success 
-        messages.success(request,"<a href='#'>Item</a>Saved", extra_tags='html_safe')
-        
-
+        messages.success(request,"<a href='#'>Item</a>Saved", extra_tags='html_safe')    
         return HttpResponseRedirect(instance.get_absolute_url())
 
     context = {
