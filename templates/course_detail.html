@@ -5,19 +5,12 @@
 {{ instance.title }} | {{ block.super }}
 {% endblock head_title %}
 
-<style>
-        {% block style %}
 
-        h1{
-            color: #777777;
-        }
-        {% endblock style %}
-         </style>
 
 
 {% block content %}
 
-
+<div class="col s6 push-s6">
 <h1>{{ title }}</h1>
 
 {{ instance.courseTitle }}<br/>
@@ -29,4 +22,5 @@
 {{ instance.courseDuration }}<br/>
 {{ instance.id }}<br/>
 
+</div>
 {% endblock content %}
