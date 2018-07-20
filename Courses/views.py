@@ -40,7 +40,7 @@ def listCourse(request):
         "title": "Course List"
     }
   
-    return render(request, "base.html", context)
+    return render(request, "courseList.html", context)
    
 
 def updateCourse(request,id=None):

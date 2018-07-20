@@ -10,11 +10,11 @@
 
 {% block content %}
 
-<div class="col s6 push-s6">
-<h1>{{ title }}</h1>
+<div class="col s6 offset-s6">
+<h1>{{ title }}<small>{{ instance.timestamp }}</small></h1>
 
 {{ instance.courseTitle }}<br/>
-{{ instance.courseDescription }}<br/>
+{{ instance.courseDescription | linebreaks}}<br/>
 {{ instance.courseCost }}<br>
 {{ instance.coursePrerequisite }}<br/>
 {{ instance.updated }}<br/>
