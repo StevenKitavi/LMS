@@ -4,10 +4,9 @@
 {% block content %} 
 
 <h4>{{ title }}</h4>
-<<<<<<< HEAD
         <div class="row">
         <div class="col s6 m6">
-        <!-- <div class="divider"></div> -->
+        <div class="divider"></div>
         
             
     {% for obj in Course_List%} 
@@ -36,39 +35,3 @@
 
 
  
-=======
-
-<div class="row">
-{% for obj in Course_List%} 
-<div class="col s6 m6">
-        <div class="card">
-               
-        
-        <div class="card-image">
-        <!-- <img src="images/sample-1.jpg"> -->
-        <span class="card-title">
-            <a href= '{{ obj.get_absolute_url }}'>Course: {{ obj.courseTitle }}</a><small>{{ obj.timestamp| timesince }}</small><br/>
-        </span>
-        <div class="card-content">
-                <p>{{ obj.courseDescription | linebreaks | truncatechars:120  }}</p><br/>
-        </div>
-        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-                              
-                           
-    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-</div>
-</div>
-</div>
-</div>
-
-<!-- {{ obj.courseCost }}<br>
-{{ obj.coursePrerequisite }}<br/>
-{{ obj.updated }}<br/>
-
-{{ obj.courseDuration }}<br/>
-{{ obj.id }}<br> -->
-{% endfor%}
-    
-{% endblock content %}
->>>>>>> 4ae0cde9dfa816cd937943aa95823c18bcd3b449
