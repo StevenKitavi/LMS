@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block head_title %}
+{{ instance.title }} | {{ block.super }}
+{% endblock head_title %}
+
+
+
+
+{% block content %}
+
+<div class="col s6 offset-s6">
+<h1>{{ title }}<small>{{ instance.timestamp }}</small></h1>
+
+{{ instance.courseTitle }}<br/>
+{{ instance.courseDescription | linebreaks}}<br/>
+{{ instance.courseCost }}<br>
+{{ instance.coursePrerequisite }}<br/>
+{{ instance.updated }}<br/>
+{{ instance.timestamp }}<br/>
+{{ instance.courseDuration }}<br/>
+{{ instance.id }}<br/>
+
+</div>
+{% endblock content %}
