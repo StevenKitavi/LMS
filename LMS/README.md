@@ -22,3 +22,9 @@ this basically handles the content of the courses
 #ADMIN MOdule
 >>>>>>> 4ae0cde9dfa816cd937943aa95823c18bcd3b449
 this manages ser actions and their permissinos.
+
+
+$ cd repo-name
+$ git remote add upstream git://github.com/username/repo-name.git
+$ git fetch upstream
+$ git merge upstream/master
