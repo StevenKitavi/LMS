@@ -54,6 +54,11 @@ jobs:
           files=$(ls artifact*)
           # Generate the subjects (base64 encoded).
           echo "digests=$(sha256sum $files | base64 -w0)" >> "${GITHUB_OUTPUT}"
+      
+      - name: Attest Build Provenance
+        uses: actions/attest-build-provenance@v2.4.0
+        with:
+          subject-path: 'artifact*'
 
   provenance:
     needs: [build]
@@ -64,4 +69,4 @@ jobs:
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
     with:
       base64-subjects: "${{ needs.build.outputs.digests }}"
-      upload-assets: true # Optional: Upload to a new release
+      upload-assets: false # Optional: Upload to a new release
