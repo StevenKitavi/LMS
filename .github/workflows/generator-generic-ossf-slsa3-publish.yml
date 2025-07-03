@@ -22,6 +22,10 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write       # Required for attestation signing
+      attestations: write   # Required for storing attestations
     outputs:
       digests: ${{ steps.hash.outputs.digests }}
     steps:
@@ -56,7 +60,7 @@ jobs:
           echo "digests=$(sha256sum $files | base64 -w0)" >> "${GITHUB_OUTPUT}"
       
       - name: Attest Build Provenance
-        uses: actions/attest-build-provenance@v2.4.0
+        uses: actions/attest-build-provenance@v2
         with:
           subject-path: 'artifact*'
 
