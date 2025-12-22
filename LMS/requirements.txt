@@ -1,4 +1,4 @@
-Django==4.2.25
+Django==4.2.27
 django-material==1.2.5
 pkg-resources==0.0.0
 pytz==2018.5
